@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
@@ -9,10 +9,10 @@ import ContactMe from "./pages/ContactMe";
 import Gallery from "./pages/Gallery";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
+import Layout from "./layout";
 
 function App() {
     return (
-        <>
             <Routes>
                 <Route path='/portfolio' element={<Portfolio/>}/>
                 <Route path='/about' element={<About/>}/>
@@ -23,7 +23,6 @@ function App() {
                 <Route path='/article' element={<Article/>}/>
                 <Route path='*' element={<NotFound/>}/>
             </Routes>
-        </>
     );
 }
 

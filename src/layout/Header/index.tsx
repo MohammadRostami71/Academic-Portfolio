@@ -1,17 +1,16 @@
 import React, {useState} from "react";
+import {useNavigate} from 'react-router-dom'
 import {Box, Tabs, Tab} from "@mui/material";
-import {Link} from "react-router-dom";
-
-
 import useStyles from "./useStyles";
+
 
 const Header: React.FC = () => {
     const classes = useStyles();
+    let navigate = useNavigate();
 
     const [value, setValue] = useState('portfolio');
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        console.log(newValue)
+    const handleChange = (event: React.SyntheticEvent, newValue: string): void => {
         setValue(newValue);
     };
 
@@ -24,13 +23,13 @@ const Header: React.FC = () => {
                 indicatorColor='secondary'
                 aria-label="secondary tabs example"
             >
-                <Tab component={Link} to='/' value="portfolio" label="Portfolio"/>
-                <Tab component={Link} to='/about' value="about" label="About"/>
-                <Tab component={Link} to='/blog' value="blog" label="Blog"/>
-                <Tab component={Link} to='/article' value="article" label="Article"/>
-                <Tab component={Link} to='/courses' value="courses" label="Courses"/>
-                <Tab component={Link} to='/contactMe' value="contactme" label="Contact me"/>
-                <Tab component={Link} to='/gallery' value="gallery" label="Gallery"/>
+                <Tab onClick={() => navigate('/')} value="portfolio" label="Portfolio"/>
+                <Tab value="about" onClick={() => navigate('/about')} label="About"/>
+                <Tab value="blog" onClick={() => navigate('/blog')} label="Blog"/>
+                <Tab value="article" onClick={() => navigate('/article')} label="Article"/>
+                <Tab value="courses" onClick={() => navigate('/courses')} label="Courses"/>
+                <Tab value="contactme" onClick={() => navigate('/contactMe')} label="Contact me"/>
+                <Tab value="gallery" onClick={() => navigate('/gallery')} label="Gallery"/>
             </Tabs>
         </Box>
     );

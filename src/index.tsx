@@ -9,6 +9,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from "./theme/theme";
 import {SWRConfig} from 'swr'
 import {BrowserRouter} from "react-router-dom";
+import {ToastContainer, Zoom} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const root = ReactDOM.createRoot(
@@ -26,18 +28,29 @@ root.render(
             }}>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
+                <ToastContainer position="top-right"
+                                transition={Zoom}
+                                autoClose={5000}
+                                draggable={false}
+                                closeButton={false}
+                                rtl
+                                newestOnTop
+                                closeOnClick
+                                pauseOnFocusLoss
+                                hideProgressBar/>
                 <Suspense fallback={<div>Loading ...</div>}>
-                    <Layout>
-                        <BrowserRouter>
+                    <BrowserRouter>
+                        <Layout>
                             <App/>
-                        </BrowserRouter>
-                    </Layout>
+                        </Layout>
+                    </BrowserRouter>
                 </Suspense>
             </ThemeProvider>
         </SWRConfig>
 
     </React.StrictMode>
-);
+)
+;
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
