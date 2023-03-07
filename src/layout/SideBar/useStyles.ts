@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
         alignItems:'center',
         width:'4rem',
         borderRight:'1px solid #ccc',
+
         '& .MuiBox-root:nth-child(2)':{
             display:'flex',
             flexDirection:'column',

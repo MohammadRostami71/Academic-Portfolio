@@ -8,10 +8,10 @@ const Header: React.FC = () => {
     const classes = useStyles();
     let navigate = useNavigate();
 
-    const [value, setValue] = useState('portfolio');
+    const [value, setValue] = useState<string | null>('portfolio');
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string): void => {
-        setValue(newValue);
+    const handleChange = (event: React.SyntheticEvent, route: string): void => {
+        setValue(route);
     };
 
     return (

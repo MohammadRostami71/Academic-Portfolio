@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
@@ -9,7 +9,6 @@ import ContactMe from "./pages/ContactMe";
 import Gallery from "./pages/Gallery";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
-import Layout from "./layout";
 
 function App() {
     return (
