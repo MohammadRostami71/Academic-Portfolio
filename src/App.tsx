@@ -9,6 +9,7 @@ import ContactMe from "./pages/ContactMe";
 import Gallery from "./pages/Gallery";
 import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
+import PostDetail from "./pages/Blog/PostDetail";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path='/about' element={<About/>}/>
                 <Route path='/courses' element={<Courses/>}/>
                 <Route path='/blog' element={<Blog/>}/>
+                <Route path='/blog/:id' element={<PostDetail/>}/>
                 <Route path='/contactMe' element={<ContactMe/>}/>
                 <Route path='/gallery' element={<Gallery/>}/>
                 <Route path='/article' element={<Article/>}/>
