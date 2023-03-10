@@ -7,6 +7,7 @@ const useStyles = makeStyles(() => ({
         justifyContent:'space-between',
         alignItems:'center',
         width:'4rem',
+        height:'100vh',
         borderRight:'1px solid #ccc',
 
         '& .MuiBox-root:nth-child(2)':{

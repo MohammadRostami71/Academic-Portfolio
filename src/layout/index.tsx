@@ -14,11 +14,11 @@ const Layout: React.FC<Props> = ({children}) => {
     return (
         <Box className={classes.layoutContainer}>
             <SideBar/>
-            <Box className={classes.contentContainer}>
-                <Box>
+            <Box className={classes.content}>
+                <Box className={classes.headerContainer}>
                     <Header/>
                 </Box>
-                <Box>
+                <Box className={classes.contentContainer}>
                     {children}
                 </Box>
             </Box>

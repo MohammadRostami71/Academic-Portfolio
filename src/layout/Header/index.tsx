@@ -1,11 +1,16 @@
 import React, {useState} from "react";
 import {useNavigate} from 'react-router-dom'
-import {Box, Tabs, Tab} from "@mui/material";
+import {Box, Tabs, Tab, useMediaQuery} from "@mui/material";
 import useStyles from "./useStyles";
-
+import {useTheme} from "@mui/styles";
+import ToggleDrawerSidebar from "../../components/UI/ToggleDrawerSidebar";
 
 const Header: React.FC = () => {
     const classes = useStyles();
+
+    const theme = useTheme();
+    // @ts-ignore
+    const isMobile = useMediaQuery(theme?.breakpoints.down("md"));
     let navigate = useNavigate();
 
     const [value, setValue] = useState<string | null>('portfolio');
@@ -16,7 +21,7 @@ const Header: React.FC = () => {
 
     return (
         <Box className={classes.headerMainContainer}>
-            <Tabs
+            {isMobile ? <ToggleDrawerSidebar/> : <Tabs
                 value={value}
                 onChange={handleChange}
                 textColor="primary"
@@ -30,7 +35,8 @@ const Header: React.FC = () => {
                 <Tab value="courses" onClick={() => navigate('/courses')} label="Courses"/>
                 <Tab value="contactme" onClick={() => navigate('/contactMe')} label="Contact me"/>
                 <Tab value="gallery" onClick={() => navigate('/gallery')} label="Gallery"/>
-            </Tabs>
+            </Tabs> }
+
         </Box>
     );
 };
