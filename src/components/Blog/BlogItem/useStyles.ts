@@ -1,36 +1,50 @@
 import {makeStyles} from "@mui/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     container:{
         display:'flex',
-        flexDirection:'column',
+        flexDirection:'row',
+        justifyContent:'space-between',
         alignItems:'center',
         width:'calc(100% - 2rem)',
         margin:'1rem',
         cursor:'pointer',
         borderRadius:'1rem',
         border:'1px solid #ccc',
+        padding:'1rem',
 
         '&:hover':{
             boxShadow:'0 3px 10px rgb(0 0 0 / 0.2)'
         },
+    },
 
-        '& .MuiTypography-root:first-child':{
-            width:'100%',
-            textAlign:'left',
-            padding:'1rem'
-        },
+    content:{
+        display:'flex',
+        flexDirection:'row-reverse',
+        flexShrink:'1',
+        alignItems:'center'
+    },
+    information:{
+        display:'flex',
+        flexDirection:'column',
 
-        '& .MuiTypography-root:nth-child(2)':{
-            width:'100%',
-            textAlign:'left',
-            padding:'1rem'
-        },
-
-        '& .MuiTypography-root:last-child':{
-            width:'100%',
-            textAlign:'right',
-            padding:'1rem'
+        '& .MuiBox-root':{
+            display:'flex',
+            gap:'0.5rem'
+        }
+    },
+    category:{
+        transform: 'rotate(-90deg)',
+        // @ts-ignore
+        [theme.breakpoints.down('sm')]: {
+            width:'2rem',
+            height:'2rem'
+        }
+    },
+    imageBox:{
+        '& img':{
+            width:'10rem',
+            height:'10rem',
         }
     }
 }));

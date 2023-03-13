@@ -4,6 +4,9 @@
     shortDescription: string,
     description: string,
     date: string,
+     author: string,
+     category: string,
+     
 }
 
 export default BlogTypes

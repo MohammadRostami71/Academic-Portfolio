@@ -13,7 +13,7 @@ const Blog: React.FC = () => {
 
     return(
         <Box>
-            {blogInfo.map((blog) => <BlogItem key={blog.id} id={blog.id} title={blog.title} shortDescription={blog.shortDescription} date={blog.date}/>)}
+            {blogInfo.map((blog) => <BlogItem key={blog.id} id={blog.id} title={blog.title} description={blog.description} shortDescription={blog.shortDescription} date={blog.date} author={blog.author} category={blog.category}/>)}
         </Box>
     )
 };
