@@ -31,7 +31,6 @@ const BlogItem= ({title,date,id,category,author}:blogTypes) => {
                </Box>
             </Box>
             <Box className={classes.imageBox}>
-                {/*<img src={x} alt=' '/>*/}
             </Box>
         </Box>
     )
