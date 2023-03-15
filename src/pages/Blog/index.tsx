@@ -25,7 +25,7 @@ const Blog: React.FC = () => {
     const blogInfo =blogData as BlogTypes[];
 
    useEffect(() => {
-       setCategories([...new Set(blogInfo.map(bi => bi.category))]);
+       setCategories([...new Set(blogInfo.map(bi => bi.category))] as string[]);
    },[]);
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -53,7 +53,7 @@ const Blog: React.FC = () => {
                             </Box>
                         )}
                     >
-                        {categories.map((category,index) => (
+                        {categories.map((category:string,index:number) => (
                             <MenuItem
                                 key={index}
                                 value={category}

@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
     },
     imageBox:{
         '& img':{
-            width:'10rem',
-            height:'10rem',
+            width:'5rem',
+            height:'5rem',
         }
     }
 }));

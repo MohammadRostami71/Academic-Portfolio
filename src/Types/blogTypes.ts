@@ -1,11 +1,11 @@
  type BlogTypes = {
-    title: string,
+    title?: string,
     id: number ,
-    shortDescription: string,
-    description: string,
-    date: string,
-     author: string,
-     category: string,
+    shortDescription?: string,
+    description?: string,
+    date?: string,
+     author?: string,
+     category?: string,
      
 }
 
