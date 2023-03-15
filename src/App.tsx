@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
-import { Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
@@ -12,6 +12,11 @@ import NotFound from "./pages/NotFound";
 import PostDetail from "./pages/Blog/PostDetail";
 
 function App() {
+    const location = useLocation()
+    useEffect(() => {
+        const background = document.querySelector('.background-body') as HTMLElement;
+        background.style.backgroundImage = `url()`;
+    }, [location])
     return (
             <Routes>
                 <Route path='/portfolio' element={<Portfolio/>}/>

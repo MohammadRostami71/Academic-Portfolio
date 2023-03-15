@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React, {ReactNode, useEffect} from "react";
 import {Box} from "@mui/material";
 import SideBar from "./SideBar";
 import useStyles from "./useStyles";

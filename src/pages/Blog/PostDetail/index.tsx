@@ -24,6 +24,13 @@ const PostDetail: React.FC = () => {
 
     const { loading, error, image } = useImage({fileName: blog?.id as number});
 
+    useEffect(() => {
+        if (image) {
+            const background = document.querySelector('.background-body') as HTMLElement;
+            background.style.backgroundImage = `url(${image})`;
+        }
+    }, [image])
+
     const sharePostHandler =  ():void => {
         if (navigator){
             navigator.share({

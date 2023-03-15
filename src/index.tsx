@@ -11,6 +11,7 @@ import {SWRConfig} from 'swr'
 import {BrowserRouter} from "react-router-dom";
 import {ToastContainer,Bounce} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {Box} from "@mui/material";
 
 
 const root = ReactDOM.createRoot(
@@ -42,6 +43,7 @@ root.render(
                 <Suspense fallback={<div>Loading ...</div>}>
                     <BrowserRouter>
                         <Layout>
+                            <Box className='background-body' />
                             <App/>
                         </Layout>
                     </BrowserRouter>
