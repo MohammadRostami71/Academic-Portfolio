@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import theme from "./theme/theme";
 import {SWRConfig} from 'swr'
 import {BrowserRouter} from "react-router-dom";
-import {ToastContainer, Zoom} from "react-toastify";
+import {ToastContainer,Bounce} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -28,16 +28,17 @@ root.render(
             }}>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <ToastContainer position="top-right"
-                                transition={Zoom}
+                <ToastContainer position="top-left"
+                                transition={Bounce}
                                 autoClose={5000}
                                 draggable={false}
                                 closeButton={false}
-                                rtl
-                                newestOnTop
+                                hideProgressBar={false}
+                                newestOnTop={false}
                                 closeOnClick
                                 pauseOnFocusLoss
-                                hideProgressBar/>
+                                theme="colored"
+                />
                 <Suspense fallback={<div>Loading ...</div>}>
                     <BrowserRouter>
                         <Layout>
