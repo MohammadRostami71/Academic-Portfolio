@@ -37,8 +37,6 @@ const PostDetail: React.FC = () => {
                 title:blog?.title,
                 text:blog?.description,
                 url:window.location.href
-            }).then(() => {
-                toast.success('post detail copy to clipboard.')
             })
         }else{
             toast.error('please check your browser and try again');
@@ -65,7 +63,7 @@ const PostDetail: React.FC = () => {
     };
 
     useEffect(() => {
-        if (items.includes(blog?.id)){
+        if (items?.includes(blog?.id)){
             setSaved(true)
         }else{
             setSaved(false)
