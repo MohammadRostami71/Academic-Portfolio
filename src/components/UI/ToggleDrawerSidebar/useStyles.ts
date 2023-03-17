@@ -1,24 +1,17 @@
 import {makeStyles} from "@mui/styles";
 
 const useStyles = makeStyles(()=>({
-    container:{
-        '& .MuiListItem-root':{
+    container:{},
 
-            '& .MuiListItemText-root':{
+    menuItem:{
+        color:'#3c0ad5',
+        textDecoration:'none',
+        fontWeight:'600',
 
-                '& .MuiTypography-root':{
-
-                    'a':{
-                        textDecoration:"none",
-                        color: "blue",
-                        fontSize: "20px",
-                    }
-
-                }
-            }
+        '&:hover':{
+            color:'#66de40',
         }
-
-    },
+    }
 }));
 
 export default useStyles;

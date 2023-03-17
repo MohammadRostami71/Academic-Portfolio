@@ -30,37 +30,37 @@ const ToggleDrawerSidebar = () => {
                 <List>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>
-                            <Link to="/">Portfolio</Link>
+                            <Link className={classes.menuItem} to="/">Portfolio</Link>
                         </ListItemText>
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>
-                            <Link to="/blog">Blog</Link>
+                            <Link className={classes.menuItem} to="/blog">Blog</Link>
                         </ListItemText>
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>
-                            <Link to="/article">Article</Link>
+                            <Link className={classes.menuItem} to="/article">Article</Link>
                         </ListItemText>
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>
-                            <Link to="/courses">Courses</Link>
+                            <Link className={classes.menuItem} to="/courses">Courses</Link>
                         </ListItemText>
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>
-                            <Link to="/contactMe">Contact me</Link>
+                            <Link className={classes.menuItem} to="/contactMe">Contact me</Link>
                         </ListItemText>
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>
-                            <Link to="/gallery">Gallery</Link>
+                            <Link className={classes.menuItem} to="/gallery">Gallery</Link>
                         </ListItemText>
                     </ListItem>
                     <ListItem onClick={() => setOpenDrawer(false)}>
                         <ListItemText>
-                            <Link to="/about">about</Link>
+                            <Link className={classes.menuItem} to="/about">about</Link>
                         </ListItemText>
                     </ListItem>
                 </List>

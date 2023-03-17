@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import {useNavigate} from 'react-router-dom'
+import React, {useEffect, useState} from "react";
+import {useLocation, useNavigate} from 'react-router-dom'
 import {Box, Tabs, Tab, useMediaQuery} from "@mui/material";
 import useStyles from "./useStyles";
 import {useTheme} from "@mui/styles";
@@ -15,6 +15,11 @@ const Header: React.FC = () => {
 
     const [value, setValue] = useState<string | null>('portfolio');
 
+    const location = useLocation()
+    useEffect(() => {
+        setValue(`${window.location.pathname.split('/')[1]}`)
+    }, [location])
+
     const handleChange = (event: React.SyntheticEvent, route: string): void => {
         setValue(route);
     };
@@ -28,7 +33,7 @@ const Header: React.FC = () => {
                 indicatorColor='secondary'
                 aria-label="secondary tabs example"
             >
-                <Tab onClick={() => navigate('/')} value="portfolio" label="Portfolio"/>
+                <Tab onClick={() => navigate('/portfolio')} value="portfolio" label="Portfolio"/>
                 <Tab value="about" onClick={() => navigate('/about')} label="About"/>
                 <Tab value="blog" onClick={() => navigate('/blog')} label="Blog"/>
                 <Tab value="article" onClick={() => navigate('/article')} label="Article"/>

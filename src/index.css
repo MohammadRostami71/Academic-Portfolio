@@ -17,6 +17,10 @@ code {
   margin: 0 auto;
 }
 
+.MuiPaper-root{
+  width:12rem;
+}
+
 .background-body {
   position: fixed;
   top: 0;
