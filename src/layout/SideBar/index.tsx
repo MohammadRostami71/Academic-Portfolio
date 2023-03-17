@@ -1,45 +1,58 @@
 import React from "react";
 
 import {Box} from "@mui/material";
-
 import HomeIcon from '@mui/icons-material/Home';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
-import socialConfig from './../../config/socialMedia.json';
+import {TwitterIcon,TelegramIcon, TwitterShareButton,TelegramShareButton,LinkedinShareButton,LinkedinIcon,EmailIcon,EmailShareButton,
+    WhatsappShareButton,WhatsappIcon} from "react-share";
+import {email, linkedin, telegram, twitter, whatsapp} from "../../config/socialMedia";
 import useStyles from "./useStyles";
-
-interface socialMedia {
-    title: string,
-    id: number,
-    url: string
-}
+import {useNavigate} from "react-router-dom";
 
 const SideBar: React.FC = () => {
     const classes = useStyles();
-    const mediaData =socialConfig as socialMedia[];
-
-    const socialClickHandler = (id:number)=> {
-        const socialUrl = mediaData.find(md => md.id === id)?.url;
-        window.open(socialUrl,'_blank')
-    };
-
+    const title = 'GitHub';
+    const navigate = useNavigate();
     return (
         <Box className={classes.sideBarMainContainer}>
             <Box>
-                <HomeIcon color="action"/>
+                <HomeIcon color="primary" fontSize='large' onClick={() => navigate('/')}/>
             </Box>
 
             <Box>
-                <TwitterIcon onClick={() => socialClickHandler(1)} color="action"/>
+                <TwitterShareButton
+                    url={twitter}
+                    title={title}
+                >
+                    <TwitterIcon size={32} round />
+                </TwitterShareButton>
 
-                <TelegramIcon onClick={() => socialClickHandler(2)} color="action"/>
+                <TelegramShareButton
+                    url={telegram}
+                    title={title}
+                >
+                    <TelegramIcon size={32} round />
+                </TelegramShareButton>
 
-                <AlternateEmailIcon onClick={() => socialClickHandler(3)} color="action"/>
+                <WhatsappShareButton
+                    url={whatsapp}
+                    title={title}
+                    separator=":: "
+                >
+                    <WhatsappIcon size={32} round />
+                </WhatsappShareButton>
 
-                <LinkedInIcon onClick={() => socialClickHandler(4)} color="action"/>
+                <EmailShareButton
+                    url={email}
+                    subject={title}
+                    body="body"
+                >
+                    <EmailIcon size={32} round />
+                </EmailShareButton>
+
+                <LinkedinShareButton url={linkedin}>
+                    <LinkedinIcon size={32} round />
+                </LinkedinShareButton>
             </Box>
         </Box>
     )
