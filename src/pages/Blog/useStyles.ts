@@ -13,6 +13,7 @@ const useStyles = makeStyles((t) => ({
         alignItems:'center',
 
         '& .MuiSvgIcon-root':{
+            cursor:'pointer'
         },
 
         '& .MuiFormControl-root':{
