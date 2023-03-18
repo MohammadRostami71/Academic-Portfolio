@@ -6,7 +6,7 @@ type courseTypes = {
     date?: string,
     title?: string,
     position?: string,
-    url?: string,
+    url: string,
 }
 
 export default courseTypes

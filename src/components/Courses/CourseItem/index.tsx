@@ -6,6 +6,10 @@ import useStyles from "./useStyles";
 const CourseItem = ({title,date,position,url}:courseTypes) => {
     const classes = useStyles();
 
+    const showCourseHandler = () => {
+        window.open(url, '_blank');
+    }
+
     return(
         <Box className={classes.container}>
                <Box>
@@ -13,9 +17,9 @@ const CourseItem = ({title,date,position,url}:courseTypes) => {
                    <Typography variant={"subtitle2"}>{title}</Typography>
                    <Typography variant={"subtitle2"}>{` - (${position})`}</Typography>
                </Box>
-                <Box>
-                    <SlideshowIcon fontSize={'large'}/>
-                </Box>
+            {url?.length > 0 && <Box>
+                <SlideshowIcon fontSize={'large'} onClick={showCourseHandler}/>
+            </Box>}
         </Box>
     )
 };
