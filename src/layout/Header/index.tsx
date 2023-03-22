@@ -17,8 +17,12 @@ const Header: React.FC = () => {
 
     const location = useLocation()
     useEffect(() => {
-        setValue(`${window.location.pathname.split('/')[1]}`)
+        setValue(`${window.location.pathname.split('/')[1]}`);
     }, [location])
+
+    useEffect(() => {
+        if (value === '') navigate('/portfolio')
+    },[value])
 
     const handleChange = (event: React.SyntheticEvent, route: string): void => {
         setValue(route);
@@ -38,7 +42,7 @@ const Header: React.FC = () => {
                 <Tab value="blog" onClick={() => navigate('/blog')} label="Blog"/>
                 <Tab value="article" onClick={() => navigate('/article')} label="Article"/>
                 <Tab value="courses" onClick={() => navigate('/courses')} label="Courses"/>
-                <Tab value="contactme" onClick={() => navigate('/contactMe')} label="Contact me"/>
+                <Tab value="contactMe" onClick={() => navigate('/contactMe')} label="Contact me"/>
                 <Tab value="gallery" onClick={() => navigate('/gallery')} label="Gallery"/>
             </Tabs> }
 
