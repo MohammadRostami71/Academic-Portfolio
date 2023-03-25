@@ -12,17 +12,17 @@ const Layout: React.FC<Props> = ({children}) => {
     const classes = useStyles();
 
     return (
-        <Box className={classes.layoutContainer}>
-            <SideBar/>
-            <Box className={classes.content}>
-                <Box className={classes.headerContainer}>
-                    <Header/>
-                </Box>
-                <Box className={classes.contentContainer}>
-                    {children}
+            <Box className={classes.layoutContainer}>
+                <SideBar/>
+                <Box className={classes.content}>
+                    <Box className={classes.headerContainer}>
+                        <Header/>
+                    </Box>
+                    <Box className={classes.contentContainer}>
+                        {children}
+                    </Box>
                 </Box>
             </Box>
-        </Box>
     )
 
 };

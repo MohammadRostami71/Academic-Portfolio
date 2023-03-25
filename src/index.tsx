@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './assets/styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Layout from "./layout";
@@ -12,7 +12,7 @@ import {BrowserRouter} from "react-router-dom";
 import {ToastContainer,Bounce} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {Box} from "@mui/material";
-
+import { Worker } from '@react-pdf-viewer/core';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -21,35 +21,38 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <SWRConfig
-            value={{
-                fetcher: (resource, init) => fetch(resource, init).then(res => res.json()),
-                refreshInterval: 3000,
-                provider: () => new Map()
-            }}>
-            <ThemeProvider theme={theme}>
-                <CssBaseline/>
-                <ToastContainer position="top-left"
-                                transition={Bounce}
-                                autoClose={5000}
-                                draggable={false}
-                                closeButton={false}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick
-                                pauseOnFocusLoss
-                                theme="colored"
-                />
-                <Suspense fallback={<div>Loading ...</div>}>
-                    <BrowserRouter>
-                        <Layout>
-                            <Box className='background-body' />
-                            <App/>
-                        </Layout>
-                    </BrowserRouter>
-                </Suspense>
-            </ThemeProvider>
-        </SWRConfig>
+        <Worker workerUrl="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js">
+            <SWRConfig
+                value={{
+                    fetcher: (resource, init) => fetch(resource, init).then(res => res.json()),
+                    refreshInterval: 3000,
+                    provider: () => new Map()
+                }}>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline/>
+                    <ToastContainer position="top-left"
+                                    transition={Bounce}
+                                    autoClose={5000}
+                                    draggable={false}
+                                    closeButton={false}
+                                    hideProgressBar={false}
+                                    newestOnTop={false}
+                                    closeOnClick
+                                    pauseOnFocusLoss
+                                    theme="colored"
+                    />
+                    <Suspense fallback={<div>Loading ...</div>}>
+                        <BrowserRouter>
+                            <Layout>
+                                <Box className='background-body' />
+                                <App/>
+                            </Layout>
+                        </BrowserRouter>
+                    </Suspense>
+                </ThemeProvider>
+            </SWRConfig>
+        </Worker>
+
 
     </React.StrictMode>
 )

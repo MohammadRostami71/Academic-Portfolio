@@ -45,3 +45,43 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.animate__delay-1 {
+  --animate-delay: .4s;
+}
+
+.animate__delay-2 {
+  --animate-delay: .6s;
+}
+
+.animate__delay-3 {
+  --animate-delay: .8s;
+}
+
+.animate__delay-4 {
+  --animate-delay: 1s;
+}
+
+.animate__delay-5 {
+  --animate-delay: 1.2s;
+}
+
+.animate__delay-6 {
+  --animate-delay: 1.4s;
+}
+
+.animate__delay-7 {
+  --animate-delay: 1.6s;
+}
+
+.animate__delay-8 {
+  --animate-delay: 1.8s;
+}
+
+.animate__delay-9 {
+  --animate-delay: 2s;
+}
+
+.animate__delay-10 {
+  --animate-delay: 2.2s;
+}
