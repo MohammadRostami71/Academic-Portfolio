@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     },
     category:{
         transform: 'rotate(-90deg)',
-        // @ts-ignore
         [theme.breakpoints.down('sm')]: {
             width:'2rem',
             height:'2rem'

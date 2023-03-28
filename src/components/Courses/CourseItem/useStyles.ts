@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
         margin:'0.5rem 2rem',
         cursor:'pointer',
 
-        // @ts-ignore
         [theme.breakpoints.down('sm')]: {
             margin:'0.25rem',
         },

@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
         transform: 'skew(0deg, -10deg)',
         padding: '20rem 0',
         marginTop: '-20rem',
-        // @ts-ignore
         [theme.breakpoints.down('sm')]: {
             margin:'0',
             '-webkit-transform': 'none',
@@ -31,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
         margin:'2.5rem auto 0',
         padding:'3rem',
         background:'#f6eeee',
-        // @ts-ignore
         [theme.breakpoints.down('sm')]: {
             margin:'0',
             '-webkit-transform': 'none',
