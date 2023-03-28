@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
@@ -85,3 +86,27 @@ code {
 .animate__delay-10 {
   --animate-delay: 2.2s;
 }
+
+@media (max-width:767px ) {
+  .slick-slider {
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 100%;
+    width:  calc(100vw - 4rem);
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width:768px ) {
+  .slick-slider {
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 32rem;
+    width:  100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/*.slick-track > div {*/
+/*  margin:0.25rem;*/
+/*}*/

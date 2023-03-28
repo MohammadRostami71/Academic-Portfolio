@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
         flexDirection:'column',
         justifyContent:'space-between',
         alignItems:'center',
-        width:'4rem',
+        flex:'0 0 4rem',
         height:'100vh',
         border:'1px solid #ccc',
         padding:'0.5rem 0',
