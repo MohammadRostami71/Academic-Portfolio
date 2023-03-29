@@ -1,0 +1,1 @@
+export const googleScholarUserId = 'vLIFw30AAAAJ';
