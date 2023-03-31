@@ -28,6 +28,7 @@
     "resolve": {
       "extensions": [".js", ".jsx"]
     },
+    "typeRoots": ["types.d.ts"],
   },
   "include": [
     "src"

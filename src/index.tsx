@@ -12,7 +12,6 @@ import {BrowserRouter} from "react-router-dom";
 import {ToastContainer,Bounce} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {Box} from "@mui/material";
-import { Worker } from '@react-pdf-viewer/core';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -21,7 +20,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <React.StrictMode>
-        <Worker workerUrl="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js">
             <SWRConfig
                 value={{
                     fetcher: (resource, init) => fetch(resource, init).then(res => res.json()),
@@ -51,9 +49,6 @@ root.render(
                     </Suspense>
                 </ThemeProvider>
             </SWRConfig>
-        </Worker>
-
-
     </React.StrictMode>
 )
 ;

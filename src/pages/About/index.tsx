@@ -1,16 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 import 'animate.css';
 import {Box, Typography} from "@mui/material";
 import aboutMe from "../../config/aboutMe";
-import { Viewer } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css';
 
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
 import useStyles from "./useStyles";
 
 const About: React.FC = () => {
     const classes= useStyles();
+    const [numPages, setNumPages] = useState<number | null>(null);
+    const [pageNumber, setPageNumber] = useState<number>(1);
+
+    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
     const {personalInformation,educationalInformation,workingInformation,moreInformation,address} = aboutMe;
+
+    function onDocumentLoadSuccess({ numPages }:any) {
+        setNumPages(numPages);
+    }
+
+    function removeTextLayerOffset() {
+        const textLayers = document.querySelectorAll(
+            '.react-pdf__Page__textContent'
+        );
+        textLayers.forEach((layer) => {
+            // @ts-ignore
+            const { style } = layer;
+            style.top = '0';
+            style.left = '0';
+            style.transform = '';
+        });
+    }
 
     return(
         <Box className={classes.container}>
@@ -30,11 +52,13 @@ const About: React.FC = () => {
                 <Typography className='animate__animated animate__delay-1s animate__fadeInLeft animate__delay-9' variant="h5">Address</Typography>
                 <Typography className='animate__animated animate__delay-1s animate__fadeInLeft animate__delay-10' variant="body2">{address}</Typography>
             </Box>
-            <Box   style={{
-                border: '1px solid rgba(0, 0, 0, 0.3)',
-                width: '60rem',
-            }} className={`${classes.cvBox} animate__animated animate__delay-1s animate__fadeInRight animate__delay-1`}>
-                <Viewer fileUrl='/assets/file/sample2.pdf'/>
+            <Box className={`${classes.cvBox} animate__animated animate__delay-1s animate__fadeInRight animate__delay-1`}>
+                <Document file={""} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Document file="sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+                        <Page pageNumber={pageNumber} onLoadSuccess={removeTextLayerOffset} />
+                    </Document>
+                </Document>
+                <Typography variant={"caption"}>Page {pageNumber} of {numPages}</Typography>
             </Box>
         </Box>
     )

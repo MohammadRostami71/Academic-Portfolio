@@ -1,15 +1,23 @@
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
 
     container:{
         display:'flex',
         flexGrow:'1',
+        padding:'0.5rem',
+
+        [theme.breakpoints.down('sm')]:{
+            flexDirection:'column',
+            gap:'0.5rem',
+            width:'calc(100vw - 5rem)',
+        },
     },
 
     content:{
         display:'flex',
         flexDirection:'column',
+        flex:'0 0 50%',
         gap:'0.5rem',
         width:'100%',
         height:'100%',
@@ -25,7 +33,9 @@ const useStyles = makeStyles(() => ({
             fontWeight:'600'
         }
     },
-    cvBox:{}
+    cvBox:{
+        flex:'0 0 50%',
+    }
 }));
 
 export default useStyles;
